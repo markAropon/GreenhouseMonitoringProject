@@ -42,11 +42,7 @@ class _TextfieldState extends State<Textfield> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-<<<<<<< HEAD
       padding: const EdgeInsets.symmetric(horizontal: 20),
-=======
-      padding: EdgeInsets.symmetric(horizontal: 20),
->>>>>>> 3f87042ab3e85ba53bb8da5bb8e17ecb2880fed1
       child: Stack(
         children: [
           TextField(
@@ -68,20 +64,12 @@ class _TextfieldState extends State<Textfield> {
                     ),
               fillColor: Colors.white, // Set background color to white
               filled: true, // Ensure the background color is filled
-<<<<<<< HEAD
               hintStyle:
                   const TextStyle(color: Colors.grey), // Style for hint text
               border:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
 
               contentPadding: const EdgeInsets.symmetric(
-=======
-              hintStyle: TextStyle(color: Colors.grey), // Style for hint text
-              border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-
-              contentPadding: EdgeInsets.symmetric(
->>>>>>> 3f87042ab3e85ba53bb8da5bb8e17ecb2880fed1
                 vertical: 20.0,
                 horizontal: 15.0, // Padding inside the Textbox
               ),
@@ -91,19 +79,11 @@ class _TextfieldState extends State<Textfield> {
             top: 5.0,
             left: 3.0,
             child: Container(
-<<<<<<< HEAD
               padding: const EdgeInsets.symmetric(horizontal: 3.0),
               color: Colors.white,
               child: Text(
                 widget.label,
                 style: const TextStyle(
-=======
-              padding: EdgeInsets.symmetric(horizontal: 3.0),
-              color: Colors.white,
-              child: Text(
-                widget.label,
-                style: TextStyle(
->>>>>>> 3f87042ab3e85ba53bb8da5bb8e17ecb2880fed1
                     color: Colors.black,
                     fontSize: 12.0,
                     fontWeight: FontWeight.w900),

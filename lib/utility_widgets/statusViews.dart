@@ -18,24 +18,15 @@ class _StatusviewsState extends State<Statusviews> {
           children: [
             Expanded(
               child: Container(
-<<<<<<< HEAD
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 decoration: const BoxDecoration(color: Colors.blueAccent),
-=======
-                padding: EdgeInsets.symmetric(vertical: 10),
-                decoration: BoxDecoration(color: Colors.blueAccent),
->>>>>>> 3f87042ab3e85ba53bb8da5bb8e17ecb2880fed1
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Image.asset('assets/icons/ph.png', height: 30, width: 30),
                     const SizedBox(width: 5),
-<<<<<<< HEAD
                     const Column(
-=======
-                    Column(
->>>>>>> 3f87042ab3e85ba53bb8da5bb8e17ecb2880fed1
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
@@ -51,30 +42,18 @@ class _StatusviewsState extends State<Statusviews> {
                 ),
               ),
             ),
-<<<<<<< HEAD
             const SizedBox(width: 10),
             Expanded(
               child: Container(
                 padding: const EdgeInsets.only(left: 0, top: 10, bottom: 10),
                 decoration: const BoxDecoration(color: Colors.blueAccent),
-=======
-            SizedBox(width: 10),
-            Expanded(
-              child: Container(
-                padding: EdgeInsets.only(left: 0, top: 10, bottom: 10),
-                decoration: BoxDecoration(color: Colors.blueAccent),
->>>>>>> 3f87042ab3e85ba53bb8da5bb8e17ecb2880fed1
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Image.asset('assets/icons/ppm.png', height: 30, width: 30),
                     const SizedBox(width: 5),
-<<<<<<< HEAD
                     const Column(
-=======
-                    Column(
->>>>>>> 3f87042ab3e85ba53bb8da5bb8e17ecb2880fed1
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
@@ -92,23 +71,14 @@ class _StatusviewsState extends State<Statusviews> {
             ),
           ],
         ),
-<<<<<<< HEAD
         const SizedBox(height: 10),
-=======
-        SizedBox(height: 10),
->>>>>>> 3f87042ab3e85ba53bb8da5bb8e17ecb2880fed1
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
               child: Container(
-<<<<<<< HEAD
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 decoration: const BoxDecoration(color: Colors.blueAccent),
-=======
-                padding: EdgeInsets.symmetric(vertical: 10),
-                decoration: BoxDecoration(color: Colors.blueAccent),
->>>>>>> 3f87042ab3e85ba53bb8da5bb8e17ecb2880fed1
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -116,11 +86,7 @@ class _StatusviewsState extends State<Statusviews> {
                     Image.asset('assets/icons/humidity.png',
                         height: 30, width: 30),
                     const SizedBox(width: 5),
-<<<<<<< HEAD
                     const Column(
-=======
-                    Column(
->>>>>>> 3f87042ab3e85ba53bb8da5bb8e17ecb2880fed1
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
@@ -136,19 +102,11 @@ class _StatusviewsState extends State<Statusviews> {
                 ),
               ),
             ),
-<<<<<<< HEAD
             const SizedBox(width: 10),
             Expanded(
               child: Container(
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 decoration: const BoxDecoration(color: Colors.blueAccent),
-=======
-            SizedBox(width: 10),
-            Expanded(
-              child: Container(
-                padding: EdgeInsets.symmetric(vertical: 10),
-                decoration: BoxDecoration(color: Colors.blueAccent),
->>>>>>> 3f87042ab3e85ba53bb8da5bb8e17ecb2880fed1
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -156,11 +114,7 @@ class _StatusviewsState extends State<Statusviews> {
                     Image.asset('assets/icons/temperature.png',
                         height: 30, width: 30),
                     const SizedBox(width: 5),
-<<<<<<< HEAD
                     const Column(
-=======
-                    Column(
->>>>>>> 3f87042ab3e85ba53bb8da5bb8e17ecb2880fed1
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
