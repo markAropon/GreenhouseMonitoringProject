@@ -1,0 +1,6 @@
+<resources>
+    <string name="google_app_id" translatable="false">1:830559955897:android:dda7219753abba61e2a468</string>
+    <string name="project_id" translatable="false">aggreemo-login</string>
+    <string name="google_api_key" translatable="false">AIzaSyAqNlvHqsK0bNm6MVMDffi5NpTYX0cQdRI</string>
+    <string name="gcm_defaultSenderId" translatable="false">830559955897</string>
+</resources>

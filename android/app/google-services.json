@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "830559955897",
+    "project_id": "aggreemo-login",
+    "storage_bucket": "aggreemo-login.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830559955897:android:dda7219753abba61e2a468",
+        "android_client_info": {
+          "package_name": "com.example.greenhouse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqNlvHqsK0bNm6MVMDffi5NpTYX0cQdRI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
