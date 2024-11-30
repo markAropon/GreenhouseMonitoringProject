@@ -62,10 +62,17 @@ class _DashboardlpState extends State<Dashboardlp> {
   }
 
   String _getWeatherIcon(String description) {
+<<<<<<< HEAD
     if (description.contains('cloud')) return 'assets/bgImages/cloudy.json';
     if (description.contains('sunny')) return 'assets/bgImages/sunny.json';
     if (description.contains('rain')) return 'assets/bgImages/rainy.json';
     return 'assets/bgImages/sunny.json';
+=======
+    if (description.contains('cloud')) return 'assets/weatherBG/cloudy.json';
+    if (description.contains('sunny')) return 'assets/weatherBG/sunny.json';
+    if (description.contains('rain')) return 'assets/weatherBG/rainy.json';
+    return 'assets/weatherBG/sunny.json';
+>>>>>>> 3f87042ab3e85ba53bb8da5bb8e17ecb2880fed1
   }
 
   Color _getBackgroundColor(String description) {
@@ -94,7 +101,11 @@ class _DashboardlpState extends State<Dashboardlp> {
         title: Row(
           children: [
             Image.asset(
+<<<<<<< HEAD
               'assets/icons/aggreemoSymbol.png',
+=======
+              'assets/aggreemoSymbol.png',
+>>>>>>> 3f87042ab3e85ba53bb8da5bb8e17ecb2880fed1
               fit: BoxFit.fill,
               height: 45,
               width: 35,
@@ -111,8 +122,13 @@ class _DashboardlpState extends State<Dashboardlp> {
             Container(
                 decoration:
                     const BoxDecoration(color: CupertinoColors.transparent),
+<<<<<<< HEAD
                 child: Image.asset('assets/icons/bellIcon.png',
                     height: 50, width: 50)),
+=======
+                child:
+                    Image.asset('assets/bellIcon.png', height: 50, width: 50)),
+>>>>>>> 3f87042ab3e85ba53bb8da5bb8e17ecb2880fed1
           ],
         ),
         backgroundColor: const Color.fromARGB(240, 248, 241, 241),

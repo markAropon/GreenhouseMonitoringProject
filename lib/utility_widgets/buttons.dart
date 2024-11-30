@@ -20,6 +20,7 @@ class Buttons extends StatelessWidget {
     return GestureDetector(
       child: Bounce(
           onTap: onTap,
+<<<<<<< HEAD
           tapDelay: const Duration(milliseconds: 150),
           longPressDuration: const Duration(microseconds: 0),
           child: Container(
@@ -29,6 +30,17 @@ class Buttons extends StatelessWidget {
             decoration: BoxDecoration(
               color: color,
               borderRadius: const BorderRadius.all(Radius.circular(5)),
+=======
+          tapDelay: Duration(milliseconds: 150),
+          longPressDuration: Duration(microseconds: 0),
+          child: Container(
+            width: MediaQuery.of(context).size.width - 80,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.symmetric(horizontal: 15),
+            decoration: BoxDecoration(
+              color: color,
+              borderRadius: BorderRadius.all(Radius.circular(5)),
+>>>>>>> 3f87042ab3e85ba53bb8da5bb8e17ecb2880fed1
             ),
             child: Center(
               child: Text(

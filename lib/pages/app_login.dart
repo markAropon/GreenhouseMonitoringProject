@@ -116,7 +116,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                     height: 90,
                     width: 90,
+<<<<<<< HEAD
                     child: Image.asset('assets/icons/leafIcon.png')),
+=======
+                    child: Image.asset('assets/leafIcon.png')),
+>>>>>>> 3f87042ab3e85ba53bb8da5bb8e17ecb2880fed1
               ],
             ),
             Align(

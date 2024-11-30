@@ -189,7 +189,11 @@ class _TrackerState extends State<Tracker> {
               ? Positioned.fill(
                   child: CameraPreview(camControl!),
                 )
+<<<<<<< HEAD
               : const Center(child: CircularProgressIndicator()),
+=======
+              : Center(child: CircularProgressIndicator()),
+>>>>>>> 3f87042ab3e85ba53bb8da5bb8e17ecb2880fed1
 
           // Result overlay on top of the camera preview
           Positioned(
@@ -197,11 +201,19 @@ class _TrackerState extends State<Tracker> {
             left: 20,
             right: 20,
             child: Container(
+<<<<<<< HEAD
               padding: const EdgeInsets.all(10),
               color: Colors.black.withOpacity(0.7),
               child: Text(
                 result.isEmpty ? '??' : result,
                 style: const TextStyle(color: Colors.white, fontSize: 16),
+=======
+              padding: EdgeInsets.all(10),
+              color: Colors.black.withOpacity(0.7),
+              child: Text(
+                result.isEmpty ? '??' : result,
+                style: TextStyle(color: Colors.white, fontSize: 16),
+>>>>>>> 3f87042ab3e85ba53bb8da5bb8e17ecb2880fed1
               ),
             ),
           ),

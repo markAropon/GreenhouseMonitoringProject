@@ -3,6 +3,10 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3f87042ab3e85ba53bb8da5bb8e17ecb2880fed1
 import '../utility_widgets/buttons.dart';
 import '../utility_widgets/textfield.dart';
 import 'app_login.dart';
