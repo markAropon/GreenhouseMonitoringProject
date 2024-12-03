@@ -1,13 +1,11 @@
-// ignore: file_names
+import 'package:fab_circular_menu_plus/fab_circular_menu_plus.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:greenhouse_monitoring_project/pages/tracker.dart';
 import 'package:lottie/lottie.dart';
-
 import 'package:intl/intl.dart';
-
 import '../functions/weatherAPI.dart';
-import '../utility_widgets/buttons.dart';
 import '../utility_widgets/statusViews.dart';
 import '../functions/rootView.dart';
 
@@ -22,7 +20,6 @@ class _DashboardlpState extends State<Dashboardlp> {
   final String _city = 'Quezon City, PH';
   String _weatherDescription = '';
   double _temperature = 0.0;
-  // ignore: unused_field
   bool _isLoading = false;
   String icon = '';
   final String plantedOn =
@@ -70,14 +67,8 @@ class _DashboardlpState extends State<Dashboardlp> {
   }
 
   Color _getBackgroundColor(String description) {
-    if (description.contains('cloud')) {}
-    if (description.contains('sunny')) {}
-    if (description.contains('rain')) {}
-    //return const Color.fromARGB(240, 80, 146, 203);
-    return const Color.fromARGB(255, 255, 255, 255);
   }
 
-  @override
   @override
   Widget build(BuildContext context) {
     // Get the background color based on the weather description
@@ -133,158 +124,94 @@ class _DashboardlpState extends State<Dashboardlp> {
         ),
         backgroundColor: const Color.fromARGB(255, 196, 214, 238),
       ),
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color.fromARGB(255, 196, 214, 238), // Light Steel Blue
-              Color.fromARGB(255, 48, 98, 139), // Steel Blue
-            ],
-          ),
-        ),
-        child: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(
-              color: Colors.white, // You can change the border color here
-              width: 0.5, // Border width
-            ),
-            gradient: const LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Color.fromARGB(255, 234, 234, 243), // Lighter Light Steel Blue
-                Color.fromARGB(255, 95, 145, 186), // Lighter Steel Blue
-              ],
-            ),
-          ),
-          margin:
-              const EdgeInsets.only(top: 20, left: 15, right: 15, bottom: 20),
-          child: Container(
-            margin:
-                const EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 20),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Stack(
-                    children: [
-                      Positioned(
-                        bottom: -40,
-                        right: -10,
-                        child: Opacity(
-                          opacity: 0.5,
-                          child: Lottie.asset(
-                            icon,
-                            width: 200,
-                            height: 200,
-                          ),
-                        ),
-                      ),
-                      Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                '$_temperature°',
-                                style: const TextStyle(
-                                  fontSize: 50,
-                                  fontWeight: FontWeight.w700,
-                                  fontStyle: FontStyle.italic,
-                                  color: Colors.black,
-                                ),
+ main
                               ),
-                              const Spacer(),
-                            ],
+                            ),
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
+                          Column(
                             children: [
-                              Text(
-                                _weatherDescription,
-                                style: const TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.black,
-                                  fontStyle: FontStyle.italic,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    '$_temperature°',
+                                    style: const TextStyle(
+                                      fontSize: 50,
+                                      fontWeight: FontWeight.w300,
+                                      fontStyle: FontStyle.italic,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                  const Spacer(),
+                                ],
                               ),
-                              const Spacer(),
-                              Text(
-                                DateFormat('MMMM d, E').format(DateTime.now()),
-                                style: const TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.black,
-                                ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    _weatherDescription,
+                                    style: const TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.black,
+                                      fontStyle: FontStyle.italic,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  const Spacer(),
+                                  Text(
+                                    DateFormat('MMMM d, E')
+                                        .format(DateTime.now()),
+                                    style: const TextStyle(
+                                      fontSize: 13,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Text(
-                                _city,
-                                style: const TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.black,
-                                ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Text(
+                                    _city,
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
                         ],
                       ),
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  Container(
-                    height: 170,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                        border: Border.all(width: .5, color: Colors.black)),
-                    //child: Tracker(),
-                  ),
-                  const SizedBox(height: 50),
-                  const Row(
-                    children: [
-                      Text(
-                        'Status',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black,
-                            fontSize: 18),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 20),
-                  Container(
-                    decoration: const BoxDecoration(),
-                    height: 200,
-                    child: PageView(
-                      controller: controller,
-                      children: const [
-                        Statusviews(),
-                        Center(child: Text('More data here')),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  Buttons(
-                    onTap: () {
-                      controller.jumpToPage(1);
-                    },
-                    label: 'Monitoring',
-                    color: const Color.fromARGB(255, 0, 85, 155),
-                    labelColor: Colors.white,
-                  ),
-                ],
+ main
               ),
             ),
           ),
-        ),
+
+          // FAB Circular Menu
+          Align(
+            alignment: Alignment.center,
+            child: FabCircularMenuPlus(
+              ringWidth: 70,
+              children: <Widget>[
+                IconButton(
+                  icon: const Icon(Icons.home),
+                  onPressed: () {
+                    print('Home');
+                  },
+                ),
+                IconButton(
+                  icon: const Icon(Icons.favorite),
+                  onPressed: () {
+                    print('Favorite');
+                  },
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

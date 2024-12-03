@@ -135,16 +135,6 @@ class _SignupState extends State<Signup> {
                               SizedBox(
                                 height: 20,
                               ),
-                              Text(
-                                "Sign Up",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.w900,
-                                  wordSpacing: 4,
-                                ),
-                              ),
-                            ],
                           ),
                         ],
                       ),

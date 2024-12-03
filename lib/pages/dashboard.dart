@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:greenhouse_monitoring_project/pages/dleetafter.dart';
 import 'app_login.dart';
 import 'dashboardLP.dart';
 import 'landingPage.dart';
-import 'tracker.dart';
 
 const String apiKey = '0741bbbfaa5554c40964fc241198e0e7';
 
@@ -14,30 +14,18 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+  // PageController to control the PageView
   PageController pageController = PageController();
   int _selectedIndex = 0;
-
-  // ignore: unused_field
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text('1st Screen'),
-    Text('2nd Screen'),
-    Text('3rd Screen'),
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
         controller: pageController,
-        children: [
-          const Dashboardlp(),
-          const Tracker(),
-          SizedBox(
-            child: Image.asset('assets/icons/group127.png'),
-          ),
-          SizedBox(
-            child: Image.asset('assets/icons/group152.png'),
-          ),
+        children: const [
+          Dashboardlp(), // HomePage widget
+          Dleetafter(), // Monitoring widget
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -64,18 +52,13 @@ class _DashboardState extends State<Dashboard> {
     );
   }
 
+  // Handle item tap event
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
+    pageController.jumpToPage(index);
   }
-}
-
-Future<void> tracker(BuildContext context) async {
-  Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => const Tracker()),
-  );
 }
 
 void main() {
