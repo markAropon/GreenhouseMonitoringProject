@@ -1,13 +1,11 @@
-// ignore: file_names
+import 'package:fab_circular_menu_plus/fab_circular_menu_plus.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:greenhouse_monitoring_project/pages/tracker.dart';
 import 'package:lottie/lottie.dart';
-
 import 'package:intl/intl.dart';
-
 import '../functions/weatherAPI.dart';
-import '../utility_widgets/buttons.dart';
 import '../utility_widgets/statusViews.dart';
 
 class Dashboardlp extends StatefulWidget {
@@ -21,7 +19,6 @@ class _DashboardlpState extends State<Dashboardlp> {
   final String _city = 'Quezon City, PH';
   String _weatherDescription = '';
   double _temperature = 0.0;
-  // ignore: unused_field
   bool _isLoading = false;
   String icon = '';
   final String plantedOn =
@@ -76,12 +73,11 @@ class _DashboardlpState extends State<Dashboardlp> {
       return const Color.fromARGB(240, 80, 146, 203);
     }
     if (description.contains('rain')) {
-      return const Color.fromARGB(255, 40, 65, 227);
+      return const Color.fromARGB(33, 10, 50, 57);
     }
     return const Color.fromARGB(240, 80, 146, 203);
   }
 
-  @override
   @override
   Widget build(BuildContext context) {
     // Get the background color based on the weather description
@@ -117,146 +113,167 @@ class _DashboardlpState extends State<Dashboardlp> {
         ),
         backgroundColor: const Color.fromARGB(240, 248, 241, 241),
       ),
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              backgroundColor.withOpacity(0.8),
-              backgroundColor.withOpacity(0.9),
-            ],
-          ),
-        ),
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(width: 1, color: Colors.blue),
-          ),
-          margin:
-              const EdgeInsets.only(top: 10, left: 15, right: 15, bottom: 30),
-          child: Container(
-            margin:
-                const EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 20),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Stack(
+      body: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  backgroundColor.withOpacity(0.8),
+                  backgroundColor.withOpacity(0.9),
+                ],
+              ),
+            ),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                border:
+                    Border.all(width: 1, color: Colors.blue.withOpacity(0.4)),
+              ),
+              margin: const EdgeInsets.only(
+                  top: 10, left: 15, right: 15, bottom: 30),
+              child: Container(
+                margin: const EdgeInsets.only(
+                    top: 10, left: 20, right: 20, bottom: 20),
+                child: SingleChildScrollView(
+                  child: Column(
                     children: [
-                      Positioned(
-                        bottom: -40,
-                        right: -10,
-                        child: Opacity(
-                          opacity: 0.5,
-                          child: Lottie.asset(
-                            icon,
-                            width: 200,
-                            height: 200,
-                          ),
-                        ),
-                      ),
-                      Column(
+                      Stack(
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                '$_temperature°',
-                                style: const TextStyle(
-                                  fontSize: 50,
-                                  fontWeight: FontWeight.w300,
-                                  fontStyle: FontStyle.italic,
-                                  color: Colors.black,
-                                ),
+                          Positioned(
+                            bottom: -40,
+                            right: -10,
+                            child: Opacity(
+                              opacity: 0.5,
+                              child: Lottie.asset(
+                                icon,
+                                width: 200,
+                                height: 200,
                               ),
-                              const Spacer(),
-                            ],
+                            ),
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
+                          Column(
                             children: [
-                              Text(
-                                _weatherDescription,
-                                style: const TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.black,
-                                  fontStyle: FontStyle.italic,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    '$_temperature°',
+                                    style: const TextStyle(
+                                      fontSize: 50,
+                                      fontWeight: FontWeight.w300,
+                                      fontStyle: FontStyle.italic,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                  const Spacer(),
+                                ],
                               ),
-                              const Spacer(),
-                              Text(
-                                DateFormat('MMMM d, E').format(DateTime.now()),
-                                style: const TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.black,
-                                ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    _weatherDescription,
+                                    style: const TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.black,
+                                      fontStyle: FontStyle.italic,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  const Spacer(),
+                                  Text(
+                                    DateFormat('MMMM d, E')
+                                        .format(DateTime.now()),
+                                    style: const TextStyle(
+                                      fontSize: 13,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Text(
-                                _city,
-                                style: const TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.black,
-                                ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Text(
+                                    _city,
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
                         ],
                       ),
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  Container(
-                    height: 200,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                        border: Border.all(width: 1, color: Colors.black)),
-                    //child: Tracker(),
-                  ),
-                  const SizedBox(height: 40),
-                  const Row(
-                    children: [
-                      Text(
-                        'Status',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black,
-                            fontSize: 18),
+                      const SizedBox(height: 40),
+                      Container(
+                        height: MediaQuery.of(context).size.height - 580,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                                width: 1, color: Colors.grey.withOpacity(0.5)),
+                            color: Colors.grey.withOpacity(0.3)),
+                        child: const Tracker(),
+                      ),
+                      const SizedBox(height: 10),
+                      const Row(
+                        children: [
+                          Text(
+                            'Status',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black,
+                                fontSize: 18),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 20),
+                      Container(
+                        decoration: const BoxDecoration(),
+                        height: 200,
+                        child: PageView(
+                          controller: controller,
+                          children: const [
+                            Statusviews(),
+                            Center(child: Text('More data here')),
+                          ],
+                        ),
                       ),
                     ],
                   ),
-                  const SizedBox(height: 20),
-                  Container(
-                    decoration: const BoxDecoration(),
-                    height: 200,
-                    child: PageView(
-                      controller: controller,
-                      children: const [
-                        Statusviews(),
-                        Center(child: Text('More data here')),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  Buttons(
-                    onTap: () {
-                      controller.jumpToPage(1);
-                    },
-                    label: 'Monitoring',
-                    color: Colors.green,
-                    labelColor: Colors.black,
-                  ),
-                ],
+                ),
               ),
             ),
           ),
-        ),
+
+          // FAB Circular Menu
+          Align(
+            alignment: Alignment.center,
+            child: FabCircularMenuPlus(
+              ringWidth: 50,
+              children: <Widget>[
+                IconButton(
+                  icon: const Icon(Icons.home),
+                  onPressed: () {
+                    print('Home');
+                  },
+                ),
+                IconButton(
+                  icon: const Icon(Icons.favorite),
+                  onPressed: () {
+                    print('Favorite');
+                  },
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -185,6 +185,7 @@ class _SignupState extends State<Signup> {
                       color: const Color.fromARGB(255, 13, 183, 101),
                       label: 'Sign Up',
                       labelColor: Colors.white,
+                      Borderradius: 5,
                     ),
                     const SizedBox(height: 20),
                     Row(

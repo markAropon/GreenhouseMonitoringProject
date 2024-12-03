@@ -199,6 +199,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         color: const Color.fromARGB(255, 13, 183, 101),
                         label: 'Login',
                         labelColor: Colors.white,
+                        Borderradius: 5,
                       ),
                       if (_isLoading) const CircularProgressIndicator(),
                       /*                    const SizedBox(
