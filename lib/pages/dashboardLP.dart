@@ -244,7 +244,7 @@ class _DashboardlpState extends State<Dashboardlp> {
                     height: 170,
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
-                        border: Border.all(width: 1, color: Colors.black)),
+                        border: Border.all(width: .5, color: Colors.black)),
                     //child: Tracker(),
                   ),
                   const SizedBox(height: 50),
