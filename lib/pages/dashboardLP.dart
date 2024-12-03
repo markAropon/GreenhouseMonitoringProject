@@ -256,7 +256,7 @@ class _DashboardlpState extends State<Dashboardlp> {
           Align(
             alignment: Alignment.center,
             child: FabCircularMenuPlus(
-              ringWidth: 50,
+              ringWidth: 70,
               children: <Widget>[
                 IconButton(
                   icon: const Icon(Icons.home),
