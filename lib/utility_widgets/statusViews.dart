@@ -19,7 +19,8 @@ class _StatusviewsState extends State<Statusviews> {
             Expanded(
               child: Container(
                 padding: const EdgeInsets.symmetric(vertical: 10),
-                decoration: const BoxDecoration(color: Colors.blueAccent),
+                decoration:
+                    const BoxDecoration(color: Color.fromARGB(255, 6, 153, 14)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -33,9 +34,16 @@ class _StatusviewsState extends State<Statusviews> {
                         Text(
                           '5.5%',
                           style: TextStyle(
-                              fontWeight: FontWeight.w600, fontSize: 18),
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                            color: Colors.white,
+                          ),
                         ),
-                        Text('PH LEVEL', style: TextStyle(fontSize: 12)),
+                        Text('LEVEL',
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.white,
+                            )),
                       ],
                     ),
                   ],
@@ -46,7 +54,8 @@ class _StatusviewsState extends State<Statusviews> {
             Expanded(
               child: Container(
                 padding: const EdgeInsets.only(left: 0, top: 10, bottom: 10),
-                decoration: const BoxDecoration(color: Colors.blueAccent),
+                decoration:
+                    const BoxDecoration(color: Color.fromARGB(255, 6, 153, 14)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -60,9 +69,16 @@ class _StatusviewsState extends State<Statusviews> {
                         Text(
                           '560ppm',
                           style: TextStyle(
-                              fontWeight: FontWeight.w600, fontSize: 18),
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                            color: Colors.white,
+                          ),
                         ),
-                        Text('NUTRIENT (NCS)', style: TextStyle(fontSize: 12)),
+                        Text('NUTRIENT (NCS)',
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.white,
+                            )),
                       ],
                     ),
                   ],
@@ -78,7 +94,8 @@ class _StatusviewsState extends State<Statusviews> {
             Expanded(
               child: Container(
                 padding: const EdgeInsets.symmetric(vertical: 10),
-                decoration: const BoxDecoration(color: Colors.blueAccent),
+                decoration:
+                    const BoxDecoration(color: Color.fromARGB(255, 6, 153, 14)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -93,9 +110,16 @@ class _StatusviewsState extends State<Statusviews> {
                         Text(
                           '62%',
                           style: TextStyle(
-                              fontWeight: FontWeight.w600, fontSize: 18),
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                            color: Colors.white,
+                          ),
                         ),
-                        Text('HUMIDITY', style: TextStyle(fontSize: 12)),
+                        Text('HUMIDITY',
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.white,
+                            )),
                       ],
                     ),
                   ],
@@ -106,7 +130,11 @@ class _StatusviewsState extends State<Statusviews> {
             Expanded(
               child: Container(
                 padding: const EdgeInsets.symmetric(vertical: 10),
-                decoration: const BoxDecoration(color: Colors.blueAccent),
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 6, 153, 14),
+                  borderRadius:
+                      BorderRadius.circular(12), // Add border radius here
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -121,9 +149,16 @@ class _StatusviewsState extends State<Statusviews> {
                         Text(
                           '26°',
                           style: TextStyle(
-                              fontWeight: FontWeight.w600, fontSize: 18),
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                            color: Colors.white,
+                          ),
                         ),
-                        Text('TEMPERATURE', style: TextStyle(fontSize: 12)),
+                        Text('TEMPERATURE',
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.white,
+                            )),
                       ],
                     ),
                   ],

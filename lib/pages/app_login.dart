@@ -102,11 +102,19 @@ class _LoginScreenState extends State<LoginScreen> {
           color: Colors.blue,
         ),
         title: const Text(''),
-        backgroundColor: const Color.fromARGB(255, 195, 230, 155),
+        backgroundColor: const Color.fromARGB(255, 220, 224, 230),
       ),
       body: Container(
-        decoration:
-            const BoxDecoration(color: Color.fromARGB(255, 195, 224, 163)),
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color.fromARGB(255, 220, 224, 230), // Light Steel Blue
+              Color.fromARGB(255, 97, 174, 236), // Steel Blue
+            ],
+          ),
+        ),
         child: Stack(
           children: [
             Row(
@@ -159,12 +167,12 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 60),
+                      const SizedBox(height: 40),
                       Textfield(
                         Controller: username,
                         obscureText: false,
                         hintText: 'Juandelacruz@gmail.com',
-                        label: 'Username',
+                        label: 'Email',
                         isPasswordField: false,
                       ),
                       const SizedBox(height: 10),

@@ -13,99 +13,107 @@ class _LandingpageState extends State<Landingpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          Positioned.fill(
-            child: Image.asset(
-              'assets/bgImages/file1 1.png',
-              fit: BoxFit.fill,
-            ),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color.fromARGB(255, 220, 224, 230), // Light Steel Blue
+              Color.fromARGB(255, 97, 174, 236), // Steel Blue
+            ],
           ),
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsets.zero,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          SizedBox(
-                            width: 180,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset(
-                                  'assets/icons/Group127.png',
-                                  fit: BoxFit.contain,
-                                  width: 20,
-                                ),
-                                const SizedBox(width: 2),
-                                Text(
-                                  'GREEMO',
-                                  style: TextStyle(
-                                    color: Colors.blue[900],
-                                    fontSize: 30,
-                                    fontWeight: FontWeight.w900,
+        ),
+        child: Stack(
+          children: [
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.zero,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            SizedBox(
+                              width: 280,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                    'assets/icons/Group127.png',
+                                    fit: BoxFit.contain,
+                                    width: 50, // Adjust the size here
+                                    height:
+                                        50, // Optional: Adjust height if needed
                                   ),
-                                ),
-                              ],
+                                  const SizedBox(width: 5),
+                                  const Text(
+                                    'GREEMO',
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 0, 151, 8),
+                                      fontSize: 50,
+                                      fontWeight: FontWeight.w900,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                          )
-                        ],
-                      ),
-                    ],
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                const Text(
-                  'Agriculture Green Monitoring',
+                  const Text(
+                    'Agriculture Green Monitoring',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Positioned(
+              left: 50,
+              bottom: 40,
+              child: TextButton(
+                onPressed: () {
+                  goToLogin(context);
+                },
+                child: const Text(
+                  'Log In',
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 12,
                     color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
                   ),
                 ),
-              ],
+              ),
             ),
-          ),
-          Positioned(
-            left: 40,
-            bottom: 20,
-            child: TextButton(
-              onPressed: () {
-                goToLogin(context);
-              },
-              child: const Text(
-                'Log In',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
+            Positioned(
+              right: 50,
+              bottom: 40,
+              child: TextButton(
+                onPressed: () {
+                  goToSignUp(context);
+                },
+                child: const Text(
+                  'Sign Up',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
                 ),
               ),
             ),
-          ),
-          Positioned(
-            right: 40,
-            bottom: 20,
-            child: TextButton(
-              onPressed: () {
-                goToSignUp(context);
-              },
-              child: const Text(
-                'Sign Up',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

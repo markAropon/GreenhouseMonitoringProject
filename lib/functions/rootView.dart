@@ -33,7 +33,7 @@ class Rootview extends StatelessWidget {
   }
 }
 
-Future<void> _logout(BuildContext context) async {
+Future<void> logout(BuildContext context) async {
   AwesomeDialog(
     context: context,
     dialogType: DialogType.warning,

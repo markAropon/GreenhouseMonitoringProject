@@ -7,6 +7,7 @@ import 'package:lottie/lottie.dart';
 import 'package:intl/intl.dart';
 import '../functions/weatherAPI.dart';
 import '../utility_widgets/statusViews.dart';
+import '../functions/rootView.dart';
 
 class Dashboardlp extends StatefulWidget {
   const Dashboardlp({super.key});
@@ -66,16 +67,6 @@ class _DashboardlpState extends State<Dashboardlp> {
   }
 
   Color _getBackgroundColor(String description) {
-    if (description.contains('cloud')) {
-      return const Color.fromARGB(239, 44, 170, 255);
-    }
-    if (description.contains('sunny')) {
-      return const Color.fromARGB(240, 80, 146, 203);
-    }
-    if (description.contains('rain')) {
-      return const Color.fromARGB(33, 10, 50, 57);
-    }
-    return const Color.fromARGB(240, 80, 146, 203);
   }
 
   @override
@@ -98,59 +89,42 @@ class _DashboardlpState extends State<Dashboardlp> {
             const Text(
               'GREEMO',
               style: TextStyle(
-                color: Color.fromARGB(255, 6, 153, 14),
+                color: Color.fromARGB(255, 3, 219, 13),
                 fontSize: 30,
                 fontWeight: FontWeight.w900,
               ),
             ),
             const Spacer(),
             Container(
-                decoration:
-                    const BoxDecoration(color: CupertinoColors.transparent),
-                child: Image.asset('assets/icons/bellIcon.png',
-                    height: 50, width: 50)),
-          ],
-        ),
-        backgroundColor: const Color.fromARGB(240, 248, 241, 241),
-      ),
-      body: Stack(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  backgroundColor.withOpacity(0.8),
-                  backgroundColor.withOpacity(0.9),
+              decoration:
+                  const BoxDecoration(color: CupertinoColors.transparent),
+              child: Row(
+                children: [
+                  Image.asset(
+                    'assets/icons/bellIcon.png',
+                    height: 50,
+                    width: 50,
+                  ),
+                  /* const SizedBox(width: 10),
+                  GestureDetector(
+                    onTap: () async {
+                      // Trigger the logout dialog
+                      await logout(context);
+                    },
+                    child: const Icon(
+                      Icons.logout,
+                      color: Colors.red,
+                      size: 30,
+                    ),
+                  ) */
                 ],
               ),
             ),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                border:
-                    Border.all(width: 1, color: Colors.blue.withOpacity(0.4)),
-              ),
-              margin: const EdgeInsets.only(
-                  top: 10, left: 15, right: 15, bottom: 30),
-              child: Container(
-                margin: const EdgeInsets.only(
-                    top: 10, left: 20, right: 20, bottom: 20),
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      Stack(
-                        children: [
-                          Positioned(
-                            bottom: -40,
-                            right: -10,
-                            child: Opacity(
-                              opacity: 0.5,
-                              child: Lottie.asset(
-                                icon,
-                                width: 200,
-                                height: 200,
+          ],
+        ),
+        backgroundColor: const Color.fromARGB(255, 196, 214, 238),
+      ),
+ main
                               ),
                             ),
                           ),
@@ -211,43 +185,7 @@ class _DashboardlpState extends State<Dashboardlp> {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 40),
-                      Container(
-                        height: MediaQuery.of(context).size.height - 580,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                                width: 1, color: Colors.grey.withOpacity(0.5)),
-                            color: Colors.grey.withOpacity(0.3)),
-                        child: const Tracker(),
-                      ),
-                      const SizedBox(height: 10),
-                      const Row(
-                        children: [
-                          Text(
-                            'Status',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black,
-                                fontSize: 18),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 20),
-                      Container(
-                        decoration: const BoxDecoration(),
-                        height: 200,
-                        child: PageView(
-                          controller: controller,
-                          children: const [
-                            Statusviews(),
-                            Center(child: Text('More data here')),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+ main
               ),
             ),
           ),
