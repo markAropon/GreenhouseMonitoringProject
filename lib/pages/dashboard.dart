@@ -19,7 +19,7 @@ class _DashboardState extends State<Dashboard> {
 
   // ignore: unused_field
   static const List<Widget> _widgetOptions = <Widget>[
-    Text('!st Screen'),
+    Text('1st Screen'),
     Text('2nd Screen'),
     Text('3rd Screen'),
   ];
