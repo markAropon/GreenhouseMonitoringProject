@@ -29,7 +29,7 @@ class _TrackerState extends State<Tracker> {
     try {
       final options = InterpreterOptions();
       interpreter = await Interpreter.fromAsset(
-        'assets/models/mobilenet_v1_1.0_224.tflite',
+        'assets/models/ssd_mobilenet.tflite',
         options: options,
       );
       print("Model Loaded");
@@ -42,7 +42,7 @@ class _TrackerState extends State<Tracker> {
   loadLabels() async {
     try {
       final labelsData =
-          await rootBundle.loadString('assets/models/mobilenet_v1_1.0_224.txt');
+          await rootBundle.loadString('assets/models/ssd_mobilenet.txt');
       labels = labelsData.split('\n');
       print("Labels Loaded");
     } catch (e) {
@@ -63,7 +63,7 @@ class _TrackerState extends State<Tracker> {
           if (!isWorking) {
             isWorking = true;
             image = imageFromStream;
-            runModelOnStream();
+            runModelOnStream(imageFromStream);
           }
         });
       });
@@ -73,7 +73,7 @@ class _TrackerState extends State<Tracker> {
   }
 
   // Preprocess the camera image and prepare the tensor for the model
-  Float32List preprocessImage(CameraImage imageFromStream) {
+  /*Float32List preprocessImage(CameraImage imageFromStream) {
     try {
       var planes = imageFromStream.planes;
       var bytesList = <int>[];
@@ -121,27 +121,24 @@ class _TrackerState extends State<Tracker> {
       print("Error during image preprocessing: $e");
       rethrow; // Re-throw the error so it can be caught in the main logic
     }
-  }
+  }*/
 
   // Run the model on the stream frame
-  runModelOnStream() async {
+  runModelOnStream(dynamic imageFromStream) async {
     if (image != null) {
       try {
-        Float32List inputTensor = preprocessImage(image!);
-        List<Float32List> output = List.filled(1, Float32List(1001));
+        var inputTensor = imageFromStream.planes.map((plane) {
+          return plane.bytes;
+        }).toList();
+
+        var input = inputTensor.first;
+        var output = List.filled(1, 0);
 
         print("Running inference...");
-        interpreter.run([inputTensor], [output]);
+        interpreter.run(input, [output]);
 
         double maxValue = double.negativeInfinity;
         int maxIndex = -1;
-        for (int i = 0; i < output[0].length; i++) {
-          double value = output[0][i];
-          if (value > maxValue) {
-            maxValue = value;
-            maxIndex = i;
-          }
-        }
 
         String predictedLabel = labels[maxIndex];
 

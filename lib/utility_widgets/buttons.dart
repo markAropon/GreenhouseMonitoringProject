@@ -6,14 +6,15 @@ class Buttons extends StatelessWidget {
   final String label;
   final Color color;
   final Color labelColor;
+  final double Borderradius;
 
-  const Buttons({
-    super.key,
-    required this.onTap,
-    required this.label,
-    required this.color,
-    required this.labelColor,
-  });
+  const Buttons(
+      {super.key,
+      required this.onTap,
+      required this.label,
+      required this.color,
+      required this.labelColor,
+      required this.Borderradius});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class Buttons extends StatelessWidget {
             margin: const EdgeInsets.symmetric(horizontal: 15),
             decoration: BoxDecoration(
               color: color,
-              borderRadius: const BorderRadius.all(Radius.circular(5)),
+              borderRadius: BorderRadius.all(Radius.circular(Borderradius)),
             ),
             child: Center(
               child: Text(
