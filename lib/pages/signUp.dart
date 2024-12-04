@@ -225,7 +225,7 @@ class _SignupState extends State<Signup> {
                             child: const Text(
                               'Login',
                               style: TextStyle(
-                                color: Colors.white,
+                                color: Color.fromARGB(255, 5, 240, 16),
                                 fontWeight: FontWeight.bold,
                               ),
                             ),

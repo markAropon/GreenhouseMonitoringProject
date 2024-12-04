@@ -3,6 +3,7 @@ import 'app_login.dart';
 import 'dashboardLP.dart';
 import 'landingPage.dart';
 import 'tracker.dart';
+import 'user_profile.dart';
 
 const String apiKey = '0741bbbfaa5554c40964fc241198e0e7';
 
@@ -17,6 +18,11 @@ class _DashboardState extends State<Dashboard> {
   PageController pageController = PageController();
   int _selectedIndex = 0;
 
+  final List<Widget> _pages = const [
+    Dashboardlp(),
+    Tracker(),
+    UserProfile(),
+  ];
   // ignore: unused_field
   static const List<Widget> _widgetOptions = <Widget>[
     Text('1st Screen'),
@@ -26,20 +32,7 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
-        physics: const NeverScrollableScrollPhysics(),
-        controller: pageController,
-        children: [
-          const Dashboardlp(),
-          const Tracker(),
-          SizedBox(
-            child: Image.asset('assets/icons/group127.png'),
-          ),
-          SizedBox(
-            child: Image.asset('assets/icons/group152.png'),
-          ),
-        ],
-      ),
+      body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,

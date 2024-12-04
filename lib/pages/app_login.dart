@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:greenhouse_monitoring_project/pages/dashboard.dart';
+import 'package:greenhouse_monitoring_project/pages/signUp.dart';
 
 import '../utility_widgets/buttons.dart';
 import '../utility_widgets/textfield.dart';
@@ -55,8 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
       switch (errorMessage.code) {
         case 'invalid-credential':
-          message =
-              'The Credentials Given Does Not Match Anything In the Database.';
+          message = 'Invalid credentials';
           break;
         case 'invalid-email':
           message = 'The email address is not valid.';
@@ -209,19 +209,36 @@ class _LoginScreenState extends State<LoginScreen> {
                         labelColor: Colors.white,
                       ),
                       if (_isLoading) const CircularProgressIndicator(),
-                      /*                    const SizedBox(
-                        height: 20,
-                      ),
-                      GestureDetector(
-                        onTap: googleLogin,
-                        child: SizedBox(
-                          height: 50,
-                          width: 50,
-                          child: Lottie.asset(
-                            'assets/farmer.json',
+                      const SizedBox(height: 20),
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            'Do not have an account? ',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                      ),*/
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Signup()),
+                              );
+                            },
+                            child: const Text(
+                              'Sign up',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 5, 240, 16),
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),

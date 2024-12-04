@@ -114,7 +114,7 @@ class _DashboardlpState extends State<Dashboardlp> {
                     height: 50,
                     width: 50,
                   ),
-                  /* const SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   GestureDetector(
                     onTap: () async {
                       // Trigger the logout dialog
@@ -125,7 +125,7 @@ class _DashboardlpState extends State<Dashboardlp> {
                       color: Colors.red,
                       size: 30,
                     ),
-                  ) */
+                  )
                 ],
               ),
             ),
@@ -156,8 +156,9 @@ class _DashboardlpState extends State<Dashboardlp> {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
+                Color.fromARGB(255, 95, 145, 186),
                 Color.fromARGB(255, 234, 234, 243), // Lighter Light Steel Blue
-                Color.fromARGB(255, 95, 145, 186), // Lighter Steel Blue
+                // Lighter Steel Blue
               ],
             ),
           ),
