@@ -7,7 +7,7 @@ import 'pages/app_login.dart';
 import 'pages/dashboard.dart';
 import 'pages/landingPage.dart';
 import 'pages/tracker.dart';
-//import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 //import 'firebase_options.dart';
 
 List<CameraDescription> camera = [];

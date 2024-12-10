@@ -23,12 +23,7 @@ class _DashboardState extends State<Dashboard> {
     Tracker(),
     UserProfile(),
   ];
-  // ignore: unused_field
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text('1st Screen'),
-    Text('2nd Screen'),
-    Text('3rd Screen'),
-  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,11 +31,13 @@ class _DashboardState extends State<Dashboard> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
+        selectedItemColor: Colors.green, // Color when selected
+        unselectedItemColor: Colors.blue, // Color when unselected
         items: [
           BottomNavigationBarItem(
             icon:
                 Image.asset('assets/icons/Group127.png', width: 20, height: 20),
-            label: 'HomePage',
+            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon:

@@ -154,7 +154,7 @@ class _SignupState extends State<Signup> {
                         Controller: username,
                         obscureText: false,
                         hintText: '',
-                        label: 'Username',
+                        label: 'FullName',
                         isPasswordField: false,
                       ),
                       const SizedBox(height: 10),

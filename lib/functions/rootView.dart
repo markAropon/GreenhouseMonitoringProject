@@ -39,6 +39,10 @@ Future<void> logout(BuildContext context) async {
     dialogType: DialogType.warning,
     animType: AnimType.topSlide,
     title: 'Are You Sure You Want To LogOut?',
+    btnOkText: 'Yes', // Text for the left button
+    btnCancelText: 'Cancel', // Text for the right button
+    btnOkColor: Colors.green, // Green background for Yes button
+    btnCancelColor: Colors.red, // Red background for Cancel button
     btnOkOnPress: () async {
       await FirebaseAuth.instance.signOut();
       Navigator.of(context).pushReplacementNamed('/landingPage');
